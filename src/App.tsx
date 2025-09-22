@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/8bit/button"
 import logo from "./assets/logo.png"
+import github from './assets/github.png'
+import twitter from './assets/twitter.png'
 
 const App = () => {
   return (
@@ -16,10 +18,19 @@ const App = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen">
         <div className="flex flex-col items-center justify-center">
           <h1 className="press-start-2p-regular text-3xl font-bold inline-flex items-center gap-2 text-white">TrustBallot<img src={logo} alt='TrustBallot' className="w-20 h-20" /></h1>
-          <h1 className="press-start-2p-regular text-3xl font-bold flex-row text-white">Decentralized Democracy For Everyone!</h1><br/>
+          <h1 className="press-start-2p-regular text-3xl font-bold flex-row text-white">Decentralized Democracy For Everyone!</h1><br />
         </div>
         <Button variant="outline">Let's Get Started</Button>
       </div>
+      <div className="flex flex-row gap-80 justify-center items-center absolute bottom-8 w-full">
+        <div>
+          <Button variant="outline">Github<img src={github} alt="Github" className="w-6 h-6" /></Button>
+        </div>
+        <div>
+          <Button variant="outline">Twitter<img src={twitter} alt="Twitter" className="w-6 h-6" /></Button>
+        </div>
+      </div>
+
     </div>
   )
 }
