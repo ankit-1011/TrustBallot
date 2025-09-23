@@ -35,7 +35,7 @@ export const buttonVariants = cva("", {
 
 export interface BitButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   ref?: React.Ref<HTMLButtonElement>;
 }
@@ -104,16 +104,17 @@ function Button({ children, asChild, ...props }: BitButtonProps) {
           {variant !== "ghost" && variant !== "link" && size !== "icon" && (
             <>
               {/* Pixelated border */}
-              <div className="absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring" />
-              <div className="absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring" />
-              <div className="absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-foreground dark:bg-ring" />
-              <div className="absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-foreground dark:bg-ring" />
-              <div className="absolute top-0 left-0 size-1.5 bg-foreground dark:bg-ring" />
-              <div className="absolute top-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
-              <div className="absolute bottom-0 left-0 size-1.5 bg-foreground dark:bg-ring" />
-              <div className="absolute bottom-0 right-0 size-1.5 bg-foreground dark:bg-ring" />
-              <div className="absolute top-1.5 -left-1.5 h-[calc(100%-12px)] w-1.5 bg-foreground dark:bg-ring" />
-              <div className="absolute top-1.5 -right-1.5 h-[calc(100%-12px)] w-1.5 bg-foreground dark:bg-ring" />
+              <div className="absolute -top-1.5 w-1/2 left-1.5 h-1.5 bg-white" />
+              <div className="absolute -top-1.5 w-1/2 right-1.5 h-1.5 bg-white" />
+              <div className="absolute -bottom-1.5 w-1/2 left-1.5 h-1.5 bg-white" />
+              <div className="absolute -bottom-1.5 w-1/2 right-1.5 h-1.5 bg-white" />
+              <div className="absolute top-0 left-0 size-1.5 bg-white" />
+              <div className="absolute top-0 right-0 size-1.5 bg-white" />
+              <div className="absolute bottom-0 left-0 size-1.5 bg-white" />
+              <div className="absolute bottom-0 right-0 size-1.5 bg-white" />
+              <div className="absolute top-1.5 -left-1.5 h-[calc(100%-12px)] w-1.5 bg-white" />
+              <div className="absolute top-1.5 -right-1.5 h-[calc(100%-12px)] w-1.5 bg-white" />
+
               {variant !== "outline" && (
                 <>
                   {/* Top shadow */}
