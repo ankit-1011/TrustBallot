@@ -1,6 +1,6 @@
 import { Label } from "@/components/ui/8bit/label"
 import { Button } from "@/components/ui/8bit/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/8bit/card"
+import { Card, CardContent, CardHeader} from "@/components/ui/8bit/card"
 import { Input } from "@/components/ui/8bit/input"
 import { useNavigate } from "react-router-dom"
 
