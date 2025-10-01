@@ -1,95 +1,140 @@
 TrustBallot 🗳️
 
-TrustBallot is a blockchain-based decentralized voting platform designed to provide secure, transparent, and tamper-proof elections. The project leverages smart contracts to ensure trust, integrity, and privacy for voters and election administrators.
+Decentralized, transparent, and privacy‑first voting. TrustBallot is a React + TypeScript app that provides a modern UI for creating and participating in elections, designed to integrate with on‑chain smart contracts for verifiable results.
 
-Table of Contents
+## Table of Contents
+- Overview
+- Features
+- Tech Stack
+- Project Structure
+- Getting Started
+- Scripts
+- Development Notes (Routing)
+- Contributing
+- License
 
-About
+## Overview
+TrustBallot aims to make secure voting simple. While the current repository includes the frontend application, it is intentionally structured to plug into blockchain smart contracts for tamper‑proof, auditable elections.
 
-Features
+## Features
+- Modern, responsive UI with an 8‑bit retro theme option
+- Animated landing experience with Framer Motion
+- Typed React components with TypeScript
+- Ready for client‑side routing (React Router)
+- Tailwind CSS styling
 
-Tech Stack
+## Tech Stack
+- React 19, TypeScript, Vite
+- Tailwind CSS 4
+- Framer Motion
+- React Router DOM 7
+- Custom UI components (including `8bit` variants)
 
-Installation
+## Project Structure
+```
+TrustBallot/
+├─ tballot/
+│  ├─ src/
+│  │  ├─ Pages/
+│  │  │  ├─ home.tsx       # Landing page
+│  │  │  └─ Login.tsx      # Login screen
+│  │  ├─ components/
+│  │  │  └─ ui/
+│  │  │     ├─ 8bit/       # Retro UI variants
+│  │  │     └─ ...
+│  │  ├─ App.tsx           # App shell (routes live here)
+│  │  ├─ main.tsx          # App bootstrap
+│  │  └─ index.css         # Global styles
+│  ├─ package.json
+│  └─ vite.config.ts
+└─ README.md (this file)
+```
 
-Usage
+## Getting Started
 
-Contributing
+### Prerequisites
+- Node.js ≥ 18
+- pnpm (recommended) or npm/yarn
 
-License
-
-About
-
-TrustBallot addresses the problems of centralized voting systems such as fraud, manipulation, and lack of transparency. By using blockchain technology, every vote is recorded as an immutable transaction, ensuring full accountability without compromising voter anonymity.
-
-Features
-
-✅ Decentralized Voting – No single entity controls the election.
-
-✅ Tamper-Proof – Every vote is recorded on-chain and immutable.
-
-✅ Transparent Results – Results can be verified by anyone on the blockchain.
-
-✅ Voter Privacy – Votes are anonymized while maintaining verifiability.
-
-✅ Smart Contract Powered – Automatic vote counting and result declaration.
-
-✅ Role-Based Access – Admins can create elections, voters can cast votes securely.
-
-Tech Stack
-
-Frontend: React.js, Tailwind CSS
-
-Blockchain: Ethereum / Solidity Smart Contracts
-
-Wallet Integration: MetaMask, RainbowKit, or Ethers.js
-
-Database (optional for off-chain storage): MongoDB / Firebase
-
-Testing: Hardhat / Ganache
-
-Installation
-
-Clone the repository:
-
-git clone https://github.com/your-username/TrustBallot.git
-cd TrustBallot
-
-
-Install dependencies:
-
+### Install
+From the `tballot` directory:
+```bash
+pnpm install
+# or
 npm install
+```
+
+### Run Dev Server
+```bash
+pnpm dev
+# or
+npm run dev
+```
+Visit the URL printed by Vite (typically `http://localhost:5173`).
+
+### Build for Production
+```bash
+pnpm build
+# or
+npm run build
+```
+
+### Preview Production Build
+```bash
+pnpm preview
+# or
+npm run preview
+```
+
+## Scripts
+The `tballot/package.json` provides the following scripts:
+- `dev`: Start the Vite dev server
+- `build`: Type‑check and build for production
+- `lint`: Run ESLint
+- `preview`: Preview the production build locally
+
+## Development Notes (Routing)
+Client‑side routing uses React Router. Ensure the app is wrapped with a router and routes are defined:
+
+```tsx
+// src/main.tsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import './index.css'
+import App from './App'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
+)
+```
+
+```tsx
+// src/App.tsx
+import { Routes, Route } from 'react-router-dom'
+import Home from './Pages/home'
+import Login from './Pages/Login'
+
+const App = () => (
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/login" element={<Login />} />
+  </Routes>
+)
+
+export default App
+```
+
+Use absolute, lowercase paths when navigating, e.g. `navigate('/login')`.
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a PR with a clear description of the change.
+
+## License
+MIT © 2025 TrustBallot
 
 
-Start the frontend:
-
-npm start
-
-
-Deploy smart contracts (on testnet or local blockchain):
-
-npx hardhat run scripts/deploy.js --network localhost
-
-Usage
-
-Connect your wallet (e.g., MetaMask).
-
-As an admin, create a new election with candidates.
-
-As a voter, select your preferred candidate and cast your vote.
-
-Verify votes and results on-chain to ensure transparency.
-
-Contributing
-
-Contributions are welcome!
-
-Fork the repo
-
-Create a branch (git checkout -b feature/YourFeature)
-
-Commit your changes (git commit -m 'Add YourFeature')
-
-Push to the branch (git push origin feature/YourFeature)
-
-Open a Pull Request
