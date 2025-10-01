@@ -1,69 +1,95 @@
-# React + TypeScript + Vite
+TrustBallot 🗳️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TrustBallot is a blockchain-based decentralized voting platform designed to provide secure, transparent, and tamper-proof elections. The project leverages smart contracts to ensure trust, integrity, and privacy for voters and election administrators.
 
-Currently, two official plugins are available:
+Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+About
 
-## Expanding the ESLint configuration
+Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Usage
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Contributing
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+License
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+About
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+TrustBallot addresses the problems of centralized voting systems such as fraud, manipulation, and lack of transparency. By using blockchain technology, every vote is recorded as an immutable transaction, ensuring full accountability without compromising voter anonymity.
+
+Features
+
+✅ Decentralized Voting – No single entity controls the election.
+
+✅ Tamper-Proof – Every vote is recorded on-chain and immutable.
+
+✅ Transparent Results – Results can be verified by anyone on the blockchain.
+
+✅ Voter Privacy – Votes are anonymized while maintaining verifiability.
+
+✅ Smart Contract Powered – Automatic vote counting and result declaration.
+
+✅ Role-Based Access – Admins can create elections, voters can cast votes securely.
+
+Tech Stack
+
+Frontend: React.js, Tailwind CSS
+
+Blockchain: Ethereum / Solidity Smart Contracts
+
+Wallet Integration: MetaMask, RainbowKit, or Ethers.js
+
+Database (optional for off-chain storage): MongoDB / Firebase
+
+Testing: Hardhat / Ganache
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/your-username/TrustBallot.git
+cd TrustBallot
+
+
+Install dependencies:
+
+npm install
+
+
+Start the frontend:
+
+npm start
+
+
+Deploy smart contracts (on testnet or local blockchain):
+
+npx hardhat run scripts/deploy.js --network localhost
+
+Usage
+
+Connect your wallet (e.g., MetaMask).
+
+As an admin, create a new election with candidates.
+
+As a voter, select your preferred candidate and cast your vote.
+
+Verify votes and results on-chain to ensure transparency.
+
+Contributing
+
+Contributions are welcome!
+
+Fork the repo
+
+Create a branch (git checkout -b feature/YourFeature)
+
+Commit your changes (git commit -m 'Add YourFeature')
+
+Push to the branch (git push origin feature/YourFeature)
+
+Open a Pull Request
