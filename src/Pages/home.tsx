@@ -3,10 +3,12 @@ import logo from "../assets/logo.png";
 import github from "../assets/github.png";
 import twitter from "../assets/twitter.png";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const App = () => {
+    const navigate = useNavigate();
 
     const words = ["Democracy", "Ownership", "Privacy"];
     const [index, setIndex] = useState(0);
@@ -75,7 +77,7 @@ const App = () => {
                     transition={{ duration: 0.6, delay: 1 }}
                     className="mt-10"
                 >
-                    <Button variant="outline">Let's Get Started</Button>
+                    <Button variant="outline" onClick={()=> navigate("./login")}>Let's Get Started</Button>
                 </motion.div>
             </div>
 
