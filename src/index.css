@@ -2,7 +2,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -120,8 +119,6 @@
     @apply bg-background text-foreground;
   }
 }
-
-
 
 .press-start-2p-regular {
   font-family: "Press Start 2P", system-ui;
