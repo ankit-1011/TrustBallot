@@ -7,7 +7,7 @@ import { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 
-const App = () => {
+const Home = () => {
     const navigate = useNavigate();
 
     const words = ["Democracy", "Ownership", "Privacy"];
@@ -118,4 +118,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Home;
