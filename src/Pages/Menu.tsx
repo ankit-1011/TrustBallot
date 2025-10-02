@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/8bit/card";
 import { Button } from "@/components/ui/8bit/button";
 import { Home, User, List } from "lucide-react";
 import { Separator } from "@/components/ui/8bit/separator";
-import { Avatar ,AvatarImage,AvatarFallback} from "@/components/ui/8bit/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 
 export default function Menu() {
     return (
