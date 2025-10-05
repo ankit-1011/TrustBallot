@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/8bit/card";
 import { Button } from "@/components/ui/8bit/button";
-import { Home, User, List } from "lucide-react";
+import { Home, User, List, Boxes } from "lucide-react";
 import { Separator } from "@/components/ui/8bit/separator";
 import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { useNavigate } from "react-router-dom";
@@ -24,6 +24,9 @@ export default function Menu() {
                     </Button>
                     <Button variant="ghost" className="w-full justify-start gap-3">
                         <List size={18} /> Voter List
+                    </Button>
+                    <Button variant="ghost" className="w-full justify-start gap-3">
+                       <Boxes />Register
                     </Button>
                 </nav>
                 <div className="p-6 border-t border-gray-300">
