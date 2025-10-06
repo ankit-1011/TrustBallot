@@ -1,21 +1,24 @@
-const { Schema, model } = require("mongoose");
+import { Schema, model } from "mongoose";
 
 
 const SignUpSchema = new Schema({
-name:{
-    type:String,
-    required:true
-},
-email:{
-    type:String,
-    required:true,
-    unique:true
-},
-password:{
-    type:String,
-    required:true,
-    min:6
-}
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+        match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        trim: true
+    },
+    password: {
+        type: String,
+        required: true,
+        minlength: 6
+    }
 })
 
-module.exports = SignUpSchema;
+export default SignUpSchema;
