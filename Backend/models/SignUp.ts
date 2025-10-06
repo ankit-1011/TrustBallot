@@ -1,3 +1,4 @@
+
 import { Schema, model } from "mongoose";
 
 
@@ -21,4 +22,8 @@ const SignUpSchema = new Schema({
     }
 })
 
-export default SignUpSchema;
+// Create model
+const SignUp = model("SignUp", SignUpSchema);
+
+// Export model (not schema)
+export default SignUp;
