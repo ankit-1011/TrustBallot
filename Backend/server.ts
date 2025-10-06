@@ -6,7 +6,7 @@ import SignUp from "./models/SignUp";
 
 
 const app = express();
-const port = 5000;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -27,6 +27,6 @@ app.get('/', (req, res) => {
   res.send("Express is running");
 });
 
-app.listen(port, () => {
-  console.log(`🚀 Server is running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
 });

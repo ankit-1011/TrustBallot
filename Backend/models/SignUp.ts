@@ -22,8 +22,7 @@ const SignUpSchema = new Schema({
     }
 })
 
-// Create model
+
 const SignUp = model("SignUp", SignUpSchema);
 
-// Export model (not schema)
 export default SignUp;
