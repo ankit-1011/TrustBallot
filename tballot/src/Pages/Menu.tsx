@@ -4,6 +4,7 @@ import { Home, User, List, Boxes } from "lucide-react";
 import { Separator } from "@/components/ui/8bit/separator";
 import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { useNavigate } from "react-router-dom";
+import { toast } from "@/components/ui/8bit/toast";
 
 export default function Menu() {
       let Navigate= useNavigate();
@@ -30,7 +31,7 @@ export default function Menu() {
                     </Button>
                 </nav>
                 <div className="p-6 border-t border-gray-300">
-                    <Button className="w-full p-7" variant="destructive" onClick={() => { Navigate("/") }}>
+                    <Button className="w-full p-7" variant="destructive" onClick={() => {toast("You Logout!") ; Navigate("/") }}>
                         Logout
                     </Button>
                 </div>

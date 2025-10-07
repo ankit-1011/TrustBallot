@@ -58,7 +58,7 @@ const Login = () => {
 
 
     return (
-            <div className="flex justify-center items-center h-screen">
+            <div className="flex justify-center items-center h-screen ">
                  {Loading ? <div className="flex justify-center items-center h-40 ">
                                  <ScatterBoxLoader
                                      primaryColor={"#6366F1"}
