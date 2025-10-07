@@ -4,6 +4,7 @@ import Login from "./Pages/Login"
 import SignUp from "./Pages/SignUp"
 import Menu from "./Pages/Menu"
 import Register from "./Pages/Register"
+import { Toaster } from "sonner"
 
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
     <Route path="/menu" element={<Menu/>}/>
     <Route path="/register" element={<Register/>}/>
    </Routes>
-   
+   <Toaster position="top-right" richColors closeButton />
    </>
   )
 }

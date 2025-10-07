@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/8bit/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/8bit/card"
 import { Input } from "@/components/ui/8bit/input"
 import { useState, type ChangeEvent, type FormEvent } from "react"
+import { toast } from "@/components/ui/8bit/toast"
+import { useNavigate } from "react-router-dom"
 
 
 interface SignUpForm {
@@ -12,6 +14,8 @@ interface SignUpForm {
 }
 
 const SignUp = () => {
+let navigate = useNavigate();
+
 
     const [formData, setFormData] = useState<SignUpForm>({
         name: "",
@@ -37,10 +41,19 @@ const SignUp = () => {
             })
 
             const data = await res.json();
-            alert(data.message || "Sign Up Successful");
+
+            if(res.ok){
+                 toast(data.message || "Sign Up Successful");
+                setFormData({name:"",email:"",password:""})
+                setTimeout(()=>{
+                   navigate("/login");
+                }
+                ,1500)
+            }
         } catch (err) {
             console.error(err);
-            alert("Error during sign up");
+            setFormData({name:"",email:"",password:""})
+            toast("Error during sign up");
         }
     }
 

@@ -13,9 +13,10 @@ const PORT = 3000;
 const JWT_SECRET =process.env.JWT_SECRET;
 
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: "http://localhost:5173",
   credentials: true
 }));
+
 app.use(express.json());
 
 const mongoURI = "mongodb://127.0.0.1:27017/trustballot";
