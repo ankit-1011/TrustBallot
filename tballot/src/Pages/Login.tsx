@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/8bit/input"
 import { useNavigate } from "react-router-dom"
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import { toast } from "@/components/ui/8bit/toast"
+import { ScatterBoxLoader } from "react-awesome-loaders"
 
 interface LoginForm {
     email: string,
@@ -13,6 +14,7 @@ interface LoginForm {
 
 
 const Login = () => {
+    const [Loading, setLoading] = useState(false);
 
     const navigate = useNavigate()
 
@@ -27,6 +29,7 @@ const Login = () => {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+        setLoading(true);
         try {
             const res = await fetch('http://localhost:3000/login', {
                 method: "POST",
@@ -38,13 +41,16 @@ const Login = () => {
                 toast(data.message || "Login Successful");
                 setFormData({ email: "", password: "" })
                 setTimeout(() => {
+                    setLoading(false);
                     navigate("/menu");
-                }, 1500)
+                }, 10000)
             }else{
+                setLoading(false);
                 toast( "Login Failed ⚠️");
                 setFormData({ email: "", password: "" })
             }
         }catch(err){
+            setLoading(false);
             toast("Server not responding ⚠️");
             setFormData({ email: "", password: "" })
             console.error(err);
@@ -53,7 +59,13 @@ const Login = () => {
 
     return (
             <div className="flex justify-center items-center h-screen">
-                <Card className="w-full max-w-md">
+                 {Loading ? <div className="flex justify-center items-center h-40 ">
+                                 <ScatterBoxLoader
+                                     primaryColor={"#6366F1"}
+                                     secondaryColor={"#E0E7FF"}
+                                 />
+                             </div>:    
+                  <Card className="w-full max-w-md">
                     <CardHeader className="flex justify-center items-center">
                         <Label>Create Account</Label>
                     </CardHeader>
@@ -75,7 +87,7 @@ const Login = () => {
                             </div>
                         </form>
                     </CardContent>
-                </Card>
+                </Card>}
             </div>
         )
     }
