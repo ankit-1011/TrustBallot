@@ -4,13 +4,16 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import SignUp from "./models/SignUp";
+import SignUp from "./models/SignUp.ts";
+import sendLoginMail from './controllers/sendmail.ts';
 dotenv.config();
 
 
 const app = express();
 const PORT = 3000;
 const JWT_SECRET =process.env.JWT_SECRET;
+
+
 
 app.use(cors({
   origin: "http://localhost:5173",
@@ -60,6 +63,8 @@ try{
   await newUser.save();
   res.status(201).json({message:"User Registered Successfuly"});
 
+
+
 }catch(err){
   console.error(err);
   res.status(500).json({message:"Server Error"});
@@ -79,15 +84,16 @@ return res.status(400).json({message:"Invalid Credentials"});
 
 const isMatch = await bcrypt.compare(password,user.password);
 if(!isMatch){
-  res.status(400).json({message:"Invalid Credentials"});
+  return res.status(400).json({message:"Invalid Credentials"});
 }
 
+await sendLoginMail(email,user.name);
 const token = jwt.sign({ id: user._id }, JWT_SECRET!, { expiresIn: '1h' });
 res.status(200).json({token,user:{id:user._id,name:user.name,email:user.email}});
 
 }catch(err){
   console.error(err);
-  res.status(500).json({messgae:"Server Error"});
+  res.status(500).json({message:"Server Error"});
 }
 })
 
