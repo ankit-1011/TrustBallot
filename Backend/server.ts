@@ -5,7 +5,8 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import SignUp from "./models/SignUp.ts";
-import sendLoginMail from './controllers/sendmail.ts';
+import sendLoginMail from './controllers/loginMail.ts';
+import signUpMail from './controllers/signUpmail.ts';
 dotenv.config();
 
 
@@ -63,8 +64,7 @@ try{
   await newUser.save();
   res.status(201).json({message:"User Registered Successfuly"});
 
-
-
+  await signUpMail(email,name);
 }catch(err){
   console.error(err);
   res.status(500).json({message:"Server Error"});

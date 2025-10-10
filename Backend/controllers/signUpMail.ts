@@ -6,10 +6,10 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const imagePath = join(__dirname, "../public/mailImage.jpg");
+const imagePath = join(__dirname, "../public/SignUpImage.png");
 
 
-async function sendLoginMail(email: any, name: any) {
+async function signUpMail(email: any, name: any) {
   try {
 
     const transporter = nodemailer.createTransport({
@@ -26,19 +26,21 @@ async function sendLoginMail(email: any, name: any) {
     const info = await transporter.sendMail({
       from: `"Admin" ${process.env.EMAIL_USER}`,
       to: email,
-      subject: "You has Login in  to Trustballot!",
-      text: `Hi ${name},\n\nWe noticed a login to your TrustBallot account.\nIf this was you, no action is needed.\nIf not, please reset your password immediately.`,
+      subject: "Welcome to Trustballot & Happy  Onchain Voting!",
+      text: `Hi ${name},\n\nYou had SignUp in to TRUSTBALLOT.`,
       html: `
-        <p>Hi ${name},</p>
-        <p>We noticed a login to your <strong>TrustBallot</strong> account.</p>
-        <p>If this was you, no action is needed.</p>
-        <p>If not, please <a href="#">reset your password</a> immediately.</p>
-        <p>Embedded image: <img src="cid:logo@example.com" alt="logo"/></p>
+        <p>Hi ${name},Welcome to TrustBallot 👋</p>
+        <p>Your voice just got stronger.</p>
+        <p>Thanks for signing up! You’re now part of a secure, transparent, and community-driven voting<br> experience. Whether you're casting a ballot, verifying results, or just exploring, you're helping<br> shape a more accountable future.</p>
+        <p>🔐<strong>Your data stays private</strong></p>
+        <p>🗳️<strong>Your vote stays verified</strong></p>
+        <p>🤝<strong>Your impact stays rea</strong></p>
+        <p><img src="cid:logo@example.com" alt="logo"/></p>
       `,
 
       attachments: [
         {
-          filename: "mailImage.jpg",
+          filename: "SignUpImage.png",
           path: imagePath,
           cid: "logo@example.com",
         },
@@ -52,4 +54,4 @@ async function sendLoginMail(email: any, name: any) {
   }
 }
 
-export default sendLoginMail;
+export default signUpMail;
