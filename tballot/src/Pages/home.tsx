@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
 import { CardContent, Card } from "@/components/ui/8bit/card";
 import CaseImage from "../assets/CaseImage.jpg";
+import { Separator } from "@/components/ui/8bit/separator";
+import etherium from "../assets/etherium.png";
 
 
 const Home = () => {
@@ -25,6 +27,10 @@ const Home = () => {
 
     return (
         <div className="min-h-screen w-full bg-black relative">
+            <div className="relative z-10 w-15 h-3 ml-5 ">
+                <img src={etherium} className="ml-9" /><h2 className="press-start-2p-regular text-white text-[15px]" >&nbsp;Ethereum Blockchain</h2>
+            </div>
+
             {/* Background */}
             <div
                 className="fixed inset-0 z-0 pointer-events-none"
@@ -80,7 +86,7 @@ const Home = () => {
                     transition={{ duration: 0.6, delay: 1 }}
                     className="mt-10"
                 >
-                    <Button variant="outline" onClick={() => navigate("./login")}>Let's Get Started</Button>
+                    <Button variant="outline" onClick={() => navigate("./login")} className="cursor-pointer">Let's Get Started</Button>
                 </motion.div>
             </div>
 
@@ -129,25 +135,31 @@ const Home = () => {
             </div>
 
             <div className="flex justify-center items-center w-full mt-10 mb-20 relative" >
-    <div className="w-[700px] h-[500px] flex justify-center items-center  bg-black rounded-md"  style={{
-       border: "4px solid white",
-       boxShadow: `
+                <div className="w-[700px] h-[500px] flex justify-center items-center  bg-black rounded-md" style={{
+                    border: "4px solid white",
+                    boxShadow: `
          4px 4px 0 #00ff00,
          8px 8px 0 #008800
        `
-     }}>
-        <img src={CaseImage} className="max-w-full max-h-full object-contain" />
-    </div>
-</div>
+                }}>
+                    <img src={CaseImage} className="max-w-full max-h-full object-contain" />
+                </div>
+            </div>
 
 
+            <Separator
+                className="w-full  border-t-1 border-green-400 relative"
+                style={{
+                    boxShadow: '4px 4px 0 #00ff00, 8px 8px 0 #008800',
+                }}
+            />
 
             {/* Footer buttons */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.2 }}
-                className="flex flex-row gap-10 m-8 bottom-8 w-full z-10"
+                className="flex flex-row gap-10 m-6 bottom-4 w-full z-10"
             >
 
                 <div>
@@ -156,7 +168,7 @@ const Home = () => {
                         onClick={() =>
                             window.open("https://github.com/ankit-1011", "_blank", "noopener,noreferrer")
                         }
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-2 cursor-pointer"
                     >
                         Github
                         <img src={github} alt="Github" className="w-6 h-6" />
@@ -169,11 +181,14 @@ const Home = () => {
                         onClick={() =>
                             window.open("https://x.com/AnRekt_1101", "_blank", "noopener,noreferrer")
                         }
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-2 cursor-pointer"
                     >
                         Twitter
                         <img src={twitter} alt="Twitter" className="w-6 h-6" />
                     </Button>
+                </div>
+                <div className="relative text-right left-[50%] ">
+                    <h2 className="press-start-2p-regular text-white text-[15px]">2025@Ankit</h2>
                 </div>
             </motion.div>
         </div>

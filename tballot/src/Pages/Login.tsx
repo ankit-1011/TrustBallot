@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { useState, type ChangeEvent, type FormEvent } from "react"
 import { toast } from "@/components/ui/8bit/toast"
 import { ScatterBoxLoader } from "react-awesome-loaders"
+import bg from "../assets/background.jpg";
 
 interface LoginForm {
     email: string,
@@ -59,7 +60,7 @@ const Login = () => {
 
 
     return (
-        <div className="flex justify-center items-center h-screen ">
+        <div className="flex justify-center items-center h-screen " style={{backgroundImage:`url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
             {Loading ? <div className="flex justify-center items-center h-40 ">
                 <ScatterBoxLoader
                     primaryColor={"#6366F1"}
@@ -68,18 +69,18 @@ const Login = () => {
             </div> :
                 <Card className="w-full max-w-md">
                     <CardHeader className="flex justify-center items-center">
-                        <Label>Create Account</Label>
+                        <Label className="font-bold text-[20px]">Create Account</Label>
                     </CardHeader>
                     <CardContent className="flex flex-col gap-4">
                         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                             <div className="flex justify-center items-center gap-4">
-                                <Label className="w-3xs">Email</Label>
-                                <Input name="email" type="email" placeholder="Enter Your Email" required value={formData.email} onChange={handleChange} />
+                                <Label className="w-3xs font-bold">Email</Label>
+                                <Input name="email" type="email" placeholder="enter ur email" required value={formData.email} onChange={handleChange}  className="w-[450px]"/>
                             </div>
 
                             <div className="flex justify-center items-center gap-4">
-                                <Label className="w-3xs">Password</Label>
-                                <Input name="password" type="password" placeholder="Enter Your Password" required value={formData.password} onChange={handleChange} />
+                                <Label className="w-3xs font-bold">Password</Label>
+                                <Input name="password" type="password" placeholder="enter ur password" required value={formData.password} onChange={handleChange} className="w-[450px]"/>
                             </div>
 
                             <div className="flex justify-center items-center gap-4">
