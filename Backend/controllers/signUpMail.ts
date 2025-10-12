@@ -34,7 +34,7 @@ async function signUpMail(email: any, name: any) {
         <p>Thanks for signing up! You’re now part of a secure, transparent, and community-driven voting<br> experience. Whether you're casting a ballot, verifying results, or just exploring, you're helping<br> shape a more accountable future.</p>
         <p>🔐<strong>Your data stays private</strong></p>
         <p>🗳️<strong>Your vote stays verified</strong></p>
-        <p>🤝<strong>Your impact stays rea</strong></p>
+        <p>🤝<strong>Your impact stays real</strong></p>
         <p><img src="cid:logo@example.com" alt="logo"/></p>
       `,
 

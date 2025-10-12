@@ -35,7 +35,6 @@ async function sendLoginMail(email: any, name: any) {
         <p>If not, please <a href="#">reset your password</a> immediately.</p>
         <p><img src="cid:logo@example.com" alt="logo"/></p>
       `,
-
       attachments: [
         {
           filename: "mailImage.jpg",

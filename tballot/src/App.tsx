@@ -5,11 +5,14 @@ import SignUp from "./Pages/SignUp"
 import Menu from "./Pages/Menu"
 import Register from "./Pages/Register"
 import { Toaster } from "sonner"
+import Cursor from "./Pages/cursor"
+
 
 
 const App = () => {
-  return (
+  return (  
    <>
+   <Cursor/>
    <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/login" element={<Login/>}/>

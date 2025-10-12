@@ -38,34 +38,35 @@ const Login = () => {
             })
             const data = await res.json();
             if (res.ok) {
-                toast(data.message || "Login Successful");
+                toast(data.message || "Login Successful ");
                 setFormData({ email: "", password: "" })
                 setTimeout(() => {
                     setLoading(false);
                     navigate("/menu");
                 }, 10000)
-            }else{
+            } else {
                 setLoading(false);
-                toast( "Login Failed ⚠️");
+                toast("Login Failed ⚠️");
                 setFormData({ email: "", password: "" })
             }
-        }catch(err){
+        } catch (err) {
             setLoading(false);
             toast("Server not responding ⚠️");
             setFormData({ email: "", password: "" })
             console.error(err);
-        }}
+        }
+    }
 
 
     return (
-            <div className="flex justify-center items-center h-screen ">
-                 {Loading ? <div className="flex justify-center items-center h-40 ">
-                                 <ScatterBoxLoader
-                                     primaryColor={"#6366F1"}
-                                     secondaryColor={"#E0E7FF"}
-                                 />
-                             </div>:    
-                  <Card className="w-full max-w-md">
+        <div className="flex justify-center items-center h-screen ">
+            {Loading ? <div className="flex justify-center items-center h-40 ">
+                <ScatterBoxLoader
+                    primaryColor={"#6366F1"}
+                    secondaryColor={"#E0E7FF"}
+                />
+            </div> :
+                <Card className="w-full max-w-md">
                     <CardHeader className="flex justify-center items-center">
                         <Label>Create Account</Label>
                     </CardHeader>
@@ -78,7 +79,7 @@ const Login = () => {
 
                             <div className="flex justify-center items-center gap-4">
                                 <Label className="w-3xs">Password</Label>
-                                <Input name="password" type="password" placeholder="Enter Your Password" required value={formData.password} onChange={handleChange}/>
+                                <Input name="password" type="password" placeholder="Enter Your Password" required value={formData.password} onChange={handleChange} />
                             </div>
 
                             <div className="flex justify-center items-center gap-4">
@@ -88,8 +89,8 @@ const Login = () => {
                         </form>
                     </CardContent>
                 </Card>}
-            </div>
-        )
-    }
+        </div>
+    )
+}
 
-    export default Login
+export default Login

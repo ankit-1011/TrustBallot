@@ -3,8 +3,11 @@ import logo from "../assets/logo.png";
 import github from "../assets/github.png";
 import twitter from "../assets/twitter.png";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
+import { CardContent, Card } from "@/components/ui/8bit/card";
+import CaseImage from "../assets/CaseImage.jpg";
 
 
 const Home = () => {
@@ -24,7 +27,7 @@ const Home = () => {
         <div className="min-h-screen w-full bg-black relative">
             {/* Background */}
             <div
-                className="absolute inset-0 z-0 pointer-events-none"
+                className="fixed inset-0 z-0 pointer-events-none"
                 style={{
                     background: "#000000",
                     backgroundImage: `radial-gradient(circle, rgba(255, 255, 255, 0.2) 1.5px, transparent 1.5px)`,
@@ -40,13 +43,13 @@ const Home = () => {
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7 }}
-                        className="press-start-2p-regular text-3xl font-bold inline-flex items-center gap-2 text-white"
+                        className="press-start-2p-regular text-7xl font-bold inline-flex items-center gap-2 text-white"
                     >
                         TrustBallot
                         <motion.img
                             src={logo}
                             alt="TrustBallot"
-                            className="w-20 h-20"
+                            className="w-30 h-30"
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
@@ -77,17 +80,76 @@ const Home = () => {
                     transition={{ duration: 0.6, delay: 1 }}
                     className="mt-10"
                 >
-                    <Button variant="outline" onClick={()=> navigate("./login")}>Let's Get Started</Button>
+                    <Button variant="outline" onClick={() => navigate("./login")}>Let's Get Started</Button>
                 </motion.div>
             </div>
+
+
+            <div className="flex flex-col items-center justify-center gap-20 mt-20 mb-40">
+
+                {/* 1️⃣ Left side */}
+                <div className="flex items-center justify-start  w-3/4">
+                    <Avatar variant="pixel" className="size-25">
+                        <AvatarImage src="https://c8.alamy.com/comp/2HWAXH8/cryptoapes-character-nft-variant-8-bit-pixel-bored-ape-avatar-with-horns-and-wearing-mask-vector-illustration-artwork-2HWAXH8.jpg" alt="@8bitcn" />
+                    </Avatar>
+
+                    <Card className="border-3 border-green-400 w-[580px] rounded-md p-2">
+                        <CardContent>
+                            Votes are encrypted and stored anonymously on-chain, ensuring voter privacy without compromising verification.
+                        </CardContent>
+                    </Card>
+                </div>
+
+                {/* 2️⃣ Right side */}
+                <div className="flex items-center justify-end  w-3/4">
+                    <Card className="border-2 border-green-400 w-[500px] rounded-md p-2 text-right">
+                        <CardContent>
+                            Every vote is signed by the voter’s wallet — proving ownership and preventing tampering.
+                        </CardContent>
+                    </Card>
+
+                    <Avatar variant="pixel" className="size-25">
+                        <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@8bitcn" />
+                    </Avatar>
+                </div>
+
+                {/* 3️⃣ Left side */}
+                <div className="flex items-center justify-start  w-3/4">
+                    <Avatar variant="pixel" className="size-25">
+                        <AvatarImage src="https://c8.alamy.com/comp/2HWAXHF/cryptoapes-character-nft-variant-8-bit-pixel-bored-ape-avatar-with-hat-and-3d-glasses-vector-illustration-artwork-2HWAXHF.jpg" alt="@8bitcn" />
+                    </Avatar>
+
+                    <Card className="border-2 border-green-400 w-[580px] rounded-md p-2">
+                        <CardContent>
+                            Anyone can verify the voting process on-chain — ensuring fairness, transparency, and public trust.
+                        </CardContent>
+                    </Card>
+                </div>
+
+            </div>
+
+            <div className="flex justify-center items-center w-full mt-10 mb-20 relative" >
+    <div className="w-[700px] h-[500px] flex justify-center items-center  bg-black rounded-md"  style={{
+       border: "4px solid white",
+       boxShadow: `
+         4px 4px 0 #00ff00,
+         8px 8px 0 #008800
+       `
+     }}>
+        <img src={CaseImage} className="max-w-full max-h-full object-contain" />
+    </div>
+</div>
+
+
 
             {/* Footer buttons */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.2 }}
-                className="flex flex-row gap-80 justify-center items-center absolute bottom-8 w-full z-10"
+                className="flex flex-row gap-10 m-8 bottom-8 w-full z-10"
             >
+
                 <div>
                     <Button
                         variant="outline"
