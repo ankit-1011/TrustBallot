@@ -4,6 +4,7 @@ import { Home, User, List, Boxes } from "lucide-react";
 import { Separator } from "@/components/ui/8bit/separator";
 import { Outlet, useNavigate } from "react-router-dom";
 import { toast } from "@/components/ui/8bit/toast";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 
 export default function Menu() {
@@ -38,16 +39,11 @@ export default function Menu() {
             </Card>
 
             {/* Main Content */}
-            <div className="flex-1 p-6">
+            <div className="flex-1 p-4">
                 <div className="flex justify-between ">
                     <h1 className=" font-bold press-start-2p-regular">ankitkrmishra119@gmail.com</h1>
-                    <div className="flex items-center gap-3">
-                        <div>
-                            <Button className="press-start-2p-regular p-5 bg-purple-500 hover:bg-purple-600 text-white mb-3 cursor-pointer"  >
-                                connect wallet
-                            </Button>
-
-                        </div>
+                    <div className="flex items-center gap-3 m-2">
+                        <ConnectButton/>
                     </div>
                 </div>
                 <Separator />
