@@ -6,6 +6,9 @@ import Menu from "./Pages/Menu"
 import Register from "./Pages/Register"
 import { Toaster } from "sonner"
 import Cursor from "./Pages/cursor"
+import Dashboard from "./Pages/Dashboard"
+import Candidate from "./Pages/Candidate"
+import Voter from "./Pages/Voter"
 
 
 
@@ -18,7 +21,12 @@ const App = () => {
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element={<SignUp/>}/>
     <Route path="/menu" element={<Menu/>}/>
-    <Route path="/register" element={<Register/>}/>
+    <Route element={<Menu/>}>
+       <Route path="/register" element={<Register/>}/>
+    <Route path={"/dashboard"} element={<Dashboard/>}/>
+    <Route path={"/candidate-list"} element={<Candidate/>}/>
+    <Route path={"/voter-list"} element={<Voter/>}/>
+    </Route>
    </Routes>
    <Toaster position="top-right" richColors closeButton />
    </>

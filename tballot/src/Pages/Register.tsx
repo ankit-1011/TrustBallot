@@ -6,6 +6,8 @@ import {
     Card,
 } from "@/components/ui/8bit/card";
 import { Button } from "@/components/ui/8bit/button";
+import { toast } from "@/components/ui/8bit/toast";
+import { Navigate } from "react-router-dom";
 
 const Register = () => {
     return (
@@ -36,6 +38,7 @@ const Register = () => {
                                 type="submit"
                                 variant="default"
                                 className="p-6 bg-lime-600 text-white font-semibold rounded hover:bg-lime-700 transition duration-200"
+                                onClick={()=>{toast("Registered Successfully");}}
                             >
                                 Register
                             </Button>
