@@ -1,8 +1,13 @@
-import React from 'react'
+import WalletConnect from './WalletConnect'
+import { useAccount } from 'wagmi'
 
 const Dashboard = () => {
+const {isConnected} = useAccount()
+
   return (
-    <div>Dashboard</div>
+    <div>
+      {!isConnected ? (<WalletConnect/>):("dashboard")}
+    </div>
   )
 }
 

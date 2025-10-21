@@ -11,7 +11,7 @@ export default function Menu() {
     let Navigate = useNavigate();
 
     return (
-        <div className="flex min-h-screen bg-gray-100">
+        <div className="flex min-h-screen bg-gray-100 ">
             {/* Sidebar */}
             <Card className="w-66 bg-white border-r border-gray-300 flex flex-col ">
                 <div className="flex justify-center text-2xl font-bold border-b border-gray-300 ">

@@ -15,7 +15,7 @@ const Register = () => {
   const {isConnected} = useAccount()
 
     return (
-        <div className="flex min-h-screen items-center justify-center bg-gray-100">
+        <div className="flex  items-center justify-center bg-gray-100 mt-20">
             {!isConnected ? (<WalletConnect />) : (
                 <Card className="w-[550px] shadow-lg-blue">
                     <CardHeader className="text-center">
