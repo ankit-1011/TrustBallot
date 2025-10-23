@@ -5,9 +5,6 @@ import twitter from "../assets/twitter.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Avatar, AvatarImage } from "@/components/ui/8bit/avatar";
-import { CardContent, Card } from "@/components/ui/8bit/card";
-import CaseImage from "../assets/CaseImage.jpg";
 import { Separator } from "@/components/ui/8bit/separator";
 import etherium from "../assets/etherium.png";
 
@@ -91,62 +88,6 @@ const Home = () => {
             </div>
 
 
-            <div className="flex flex-col items-center justify-center gap-20 mt-20 mb-40">
-
-                {/* 1️⃣ Left side */}
-                <div className="flex items-center justify-start  w-3/4">
-                    <Avatar variant="pixel" className="size-25">
-                        <AvatarImage src="https://c8.alamy.com/comp/2HWAXH8/cryptoapes-character-nft-variant-8-bit-pixel-bored-ape-avatar-with-horns-and-wearing-mask-vector-illustration-artwork-2HWAXH8.jpg" alt="@8bitcn" />
-                    </Avatar>
-
-                    <Card className="border-3 border-green-400 w-[580px] rounded-md p-2">
-                        <CardContent>
-                            Votes are encrypted and stored anonymously on-chain, ensuring voter privacy without compromising verification.
-                        </CardContent>
-                    </Card>
-                </div>
-
-                {/* 2️⃣ Right side */}
-                <div className="flex items-center justify-end  w-3/4">
-                    <Card className="border-2 border-green-400 w-[500px] rounded-md p-2 text-right">
-                        <CardContent>
-                            Every vote is signed by the voter’s wallet — proving ownership and preventing tampering.
-                        </CardContent>
-                    </Card>
-
-                    <Avatar variant="pixel" className="size-25">
-                        <AvatarImage src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" alt="@8bitcn" />
-                    </Avatar>
-                </div>
-
-                {/* 3️⃣ Left side */}
-                <div className="flex items-center justify-start  w-3/4">
-                    <Avatar variant="pixel" className="size-25">
-                        <AvatarImage src="https://c8.alamy.com/comp/2HWAXHF/cryptoapes-character-nft-variant-8-bit-pixel-bored-ape-avatar-with-hat-and-3d-glasses-vector-illustration-artwork-2HWAXHF.jpg" alt="@8bitcn" />
-                    </Avatar>
-
-                    <Card className="border-2 border-green-400 w-[580px] rounded-md p-2">
-                        <CardContent>
-                            Anyone can verify the voting process on-chain — ensuring fairness, transparency, and public trust.
-                        </CardContent>
-                    </Card>
-                </div>
-
-            </div>
-
-            <div className="flex justify-center items-center w-full mt-10 mb-20 relative" >
-                <div className="w-[700px] h-[500px] flex justify-center items-center  bg-black rounded-md" style={{
-                    border: "4px solid white",
-                    boxShadow: `
-         4px 4px 0 #00ff00,
-         8px 8px 0 #008800
-       `
-                }}>
-                    <img src={CaseImage} className="max-w-full max-h-full object-contain" />
-                </div>
-            </div>
-
-
             <Separator
                 className="w-full  border-t-1 border-green-400 relative"
                 style={{
@@ -187,8 +128,8 @@ const Home = () => {
                         <img src={twitter} alt="Twitter" className="w-6 h-6" />
                     </Button>
                 </div>
-                <div className="relative text-right left-[50%] ">
-                    <h2 className="press-start-2p-regular text-white text-[15px]">2025@Ankit</h2>
+                <div className="relative text-right left-[21%]">
+                    <h2 className="press-start-2p-regular text-white text-[15px]">2025@TrustBallot all right reserved</h2>
                 </div>
             </motion.div>
         </div>
