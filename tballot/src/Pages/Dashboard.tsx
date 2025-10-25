@@ -13,7 +13,7 @@ const Dashboard = () => {
           <div className="w-[500px] ml-50 mt-10 m-10 bg-fuchsia-100">
             <ChartExample />
           </div>
-          <div className="w-60 h-52 border-3 border-black rounded-lg border-r-8 border-b-8 hover:-translate-y-1 duration-200"><SquareArrowOutUpRight className='hover:translate-y-0.5 duration-100 cursor-pointer'/>
+          <div className="w-60 h-52 border-3 border-black rounded-lg border-r-8 border-b-8 hover:-translate-y-1 duration-200"><SquareArrowOutUpRight className='hover:translate-y-0.5 duration-100 cursor-pointer' />
             <div className="w-50 h-30 m-2  ml-4 border-2 border-black rounded-lg">
               <img src="https://8bitcn.com/images/pixelized-8bitcnorc.jpg" className="w-full h-full object-cover"
                 alt="8bit image" />
