@@ -93,9 +93,9 @@ contract TrustBallot {
     }
 
     // ---------- Voting ----------
-    function vote(uint256 _candidateId , address _voter) external {
+    function vote(uint256 _candidateId ) external {
         require(state == ElectionState.ONGOING, "Voting not allowed");
-        Voter storage sender = voters[_voter];
+        Voter storage sender = voters[msg.sender];
         require(sender.isRegistered, "Not a registered voter");
         require(!sender.hasVoted, "Already voted");
 
