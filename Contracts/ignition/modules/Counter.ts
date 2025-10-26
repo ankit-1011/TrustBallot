@@ -1,9 +1,9 @@
 import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";
 
-export default buildModule("CounterModule", (m) => {
-  const counter = m.contract("Counter");
+const TrustBallotModule = buildModule("TrustBallotModule", (m) => {
+  const trustBallot = m.contract("TrustBallot");
 
-  m.call(counter, "incBy", [5n]);
-
-  return { counter };
+  return { trustBallallot: trustBallot };
 });
+
+export default TrustBallotModule;

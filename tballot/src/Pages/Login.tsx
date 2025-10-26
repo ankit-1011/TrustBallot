@@ -40,11 +40,12 @@ const Login = () => {
             const data = await res.json();
             if (res.ok) {
                 toast(data.message || "Login Successful ");
+                localStorage.setItem("userEmail",formData.email)
                 setFormData({ email: "", password: "" })
-                setTimeout(() => {
+                
                     setLoading(false);
-                    navigate("/menu");
-                }, 10000)
+                    navigate("/menu",{state:{email:formData.email}});
+               
             } else {
                 setLoading(false);
                 toast("Login Failed ⚠️");

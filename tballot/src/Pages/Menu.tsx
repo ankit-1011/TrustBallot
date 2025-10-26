@@ -2,13 +2,15 @@ import { Card } from "@/components/ui/8bit/card";
 import { Button } from "@/components/ui/8bit/button";
 import { Home, User, List, Boxes } from "lucide-react";
 import { Separator } from "@/components/ui/8bit/separator";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "@/components/ui/8bit/toast";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 
 export default function Menu() {
     let Navigate = useNavigate();
+    let location = useLocation();
+    let email = location.state?.email || localStorage.getItem("userEmail");
 
     return (
         <div className="flex min-h-screen bg-gray-100 ">
@@ -32,7 +34,7 @@ export default function Menu() {
                     </Button>
                 </nav>
                 <div className="p-6 border-t border-gray-300 ">
-                    <Button className="w-full p-7 cursor-pointer" variant="destructive" onClick={() => { toast("You Logout!"); Navigate("/") }}>
+                    <Button className="w-full p-7 cursor-pointer" variant="destructive" onClick={() => {localStorage.removeItem("userEmail"); toast("You Logout!"); Navigate("/") }}>
                         Logout
                     </Button>
                 </div>
@@ -41,7 +43,7 @@ export default function Menu() {
             {/* Main Content */}
             <div className="flex-1 p-4">
                 <div className="flex justify-between ">
-                    <h1 className=" font-bold press-start-2p-regular">ankitkrmishra119@gmail.com</h1>
+                    <h1 className=" font-bold press-start-2p-regular">{email}</h1>
                     <div className="flex items-center gap-3 m-2">
                         <ConnectButton/>
                     </div>
