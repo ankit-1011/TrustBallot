@@ -72,7 +72,7 @@ const SignUp = () => {
                     primaryColor={"#6366F1"}
                     secondaryColor={"#E0E7FF"}
                 />
-            </div> : <Card className="w-full max-w-md">
+            </div> : <Card className="w-[490px] ">
                 <CardHeader>
                     <Label className="text-2xl font-semibold flex justify-center items-center">
                         Sign Up
@@ -86,7 +86,7 @@ const SignUp = () => {
                             <Input
                                 name="name"
                                 type="text"
-                                placeholder="Enter ur Full-Name"
+                                placeholder="Enter ur FullName"
                                 required
                                 onChange={handleChange}
                                 className="w-[450px]"

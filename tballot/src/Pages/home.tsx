@@ -5,7 +5,6 @@ import twitter from "../assets/twitter.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Separator } from "@/components/ui/8bit/separator";
 import etherium from "../assets/etherium.png";
 
 
@@ -88,12 +87,6 @@ const Home = () => {
             </div>
 
 
-            <Separator
-                className="w-full  border-t-1 border-green-400 relative"
-                style={{
-                    boxShadow: '4px 4px 0 #00ff00, 8px 8px 0 #008800',
-                }}
-            />
 
             {/* Footer buttons */}
             <motion.div

@@ -68,7 +68,7 @@ const Login = () => {
                     secondaryColor={"#E0E7FF"}
                 />
             </div> :
-                <Card className="w-full max-w-md">
+                <Card className="w-[490px] ">
                     <CardHeader className="flex justify-center items-center">
                         <Label className="font-bold text-[20px]">Create Account</Label>
                     </CardHeader>

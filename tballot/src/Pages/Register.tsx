@@ -7,9 +7,10 @@ import {
 } from "@/components/ui/8bit/card";
 import { Button } from "@/components/ui/8bit/button";
 import { toast } from "@/components/ui/8bit/toast";
-import { Navigate } from "react-router-dom";
 import WalletConnect from "./WalletConnect";
 import { useAccount } from "wagmi";
+import { ComboBoxExample } from "./ComboBoxExample";
+
 
 const Register = () => {
   const {isConnected} = useAccount()
@@ -17,6 +18,7 @@ const Register = () => {
     return (
         <div className="flex  items-center justify-center bg-gray-100 mt-20">
             {!isConnected ? (<WalletConnect />) : (
+                <>
                 <Card className="w-[550px] shadow-lg-blue">
                     <CardHeader className="text-center">
                         <CardTitle>Registration Form</CardTitle>
@@ -51,6 +53,7 @@ const Register = () => {
                         </form>
                     </CardContent>
                 </Card>
+                </>
             )}
         </div>
     );
